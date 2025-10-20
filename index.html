@@ -100,7 +100,8 @@
                   terbaik. Gratis ongkir untuk pembelian pertama!
                 </p>
                 <div class="flex gap-4">
-                  <button
+                  <a
+                    href="/produk/"
                     data-slot="button"
                     class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
                     Belanja Sekarang<svg
@@ -117,12 +118,13 @@
                       <path d="M5 12h14"></path>
                       <path d="m12 5 7 7-7 7"></path>
                     </svg>
-                  </button>
-                  <button
+                  </a>
+                  <a
+                    href="/kontak/"
                     data-slot="button"
                     class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive border h-10 rounded-md px-6 has-[>svg]:px-4 bg-transparent text-white border-white hover:bg-white hover:text-blue-600">
-                    Lihat Promo
-                  </button>
+                    Kontak
+                  </a>
                 </div>
               </div>
               <div class="hidden md:block">
@@ -137,9 +139,9 @@
         <section class="py-12 bg-gray-50">
           <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div class="text-center">
+              <div class="text-center group">
                 <div
-                  class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -150,7 +152,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-truck w-8 h-8 text-blue-600">
+                    class="lucide lucide-truck w-8 h-8 text-blue-600 group-hover:text-blue-100 transition-colors">
                     <path
                       d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
                     <path d="M15 18H9"></path>
@@ -163,9 +165,9 @@
                 <h3 class="mb-1">Gratis Ongkir</h3>
                 <p class="text-sm text-gray-600">Untuk pembelian pertama</p>
               </div>
-              <div class="text-center">
+              <div class="text-center group">
                 <div
-                  class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -176,7 +178,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-shield w-8 h-8 text-blue-600">
+                    class="lucide lucide-shield w-8 h-8 text-blue-600 group-hover:text-blue-100 transition-colors">
                     <path
                       d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                   </svg>
@@ -184,9 +186,9 @@
                 <h3 class="mb-1">Garansi Resmi</h3>
                 <p class="text-sm text-gray-600">100% produk original</p>
               </div>
-              <div class="text-center">
+              <div class="text-center group">
                 <div
-                  class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -197,7 +199,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-headphones w-8 h-8 text-blue-600">
+                    class="lucide lucide-headphones w-8 h-8 text-blue-600 group-hover:text-blue-100 transition-colors">
                     <path
                       d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
                   </svg>
@@ -205,9 +207,9 @@
                 <h3 class="mb-1">24/7 Support</h3>
                 <p class="text-sm text-gray-600">Siap membantu Anda</p>
               </div>
-              <div class="text-center">
+              <div class="text-center group">
                 <div
-                  class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -218,7 +220,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-credit-card w-8 h-8 text-blue-600">
+                    class="lucide lucide-credit-card w-8 h-8 text-blue-600 group-hover:text-blue-100 transition-colors">
                     <rect width="20" height="14" x="2" y="5" rx="2"></rect>
                     <line x1="2" x2="22" y1="10" y2="10"></line>
                   </svg>
@@ -236,7 +238,8 @@
                 <h2 class="mb-2">Produk Unggulan</h2>
                 <p class="text-gray-600">Pilihan terbaik untuk Anda</p>
               </div>
-              <button
+              <a
+                href="/produk/"
                 data-slot="button"
                 class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3">
                 Lihat Semua<svg
@@ -253,7 +256,7 @@
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
-              </button>
+              </a>
             </div>
             <div
               class="top-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
@@ -263,7 +266,8 @@
           <div class="container mx-auto px-4">
             <h2 class="text-center mb-8">Kategori Populer</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div
+              <a
+                href="/produk/?default_category=smartphone"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1592375601764-5dd6be536f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwZWxlY3Ryb25pY3N8ZW58MXx8fHwxNzYwNDgxMTc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -273,8 +277,9 @@
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <h3 class="text-white">Smartphone</h3>
                 </div>
-              </div>
-              <div
+              </a>
+              <a
+                href="/produk/?default_category=laptop"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXB0b3AlMjBjb21wdXRlcnxlbnwxfHx8fDE3NjA0OTI2Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -284,29 +289,31 @@
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <h3 class="text-white">Laptop</h3>
                 </div>
-              </div>
-              <div
+              </a>
+              <a
+                href="/produk/?default_category=audio"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlbGVzcyUyMGhlYWRwaG9uZXN8ZW58MXx8fHwxNzYwNDQ2MDI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Headphone"
+                  alt="Audio"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 class="text-white">Headphone</h3>
+                  <h3 class="text-white">Audio</h3>
                 </div>
-              </div>
-              <div
+              </a>
+              <a
+                href="/produk/?default_category=wearable"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMHdhdGNofGVufDF8fHx8MTc2MDUwNjg0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Smartwatch"
+                  alt="Wearable"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 class="text-white">Smartwatch</h3>
+                  <h3 class="text-white">Wearable</h3>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </section>
@@ -318,14 +325,19 @@
               penawaran eksklusif
             </p>
             <div class="flex gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Email Anda"
-                class="flex-1 px-4 py-3 rounded-md text-gray-900" /><button
-                data-slot="button"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
-                Subscribe
-              </button>
+              <!-- TODO: Tambahkan JavaScript untuk validasi email dan perbagus desain pesan error -->
+              <form action="">
+                <div class="subscribe-error-message"></div>
+                <input
+                  type="email"
+                  placeholder="Email Anda"
+                  required
+                  class="flex-1 px-4 py-3 rounded-md text-gray-900" /><button
+                  data-slot="button"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
         </section>

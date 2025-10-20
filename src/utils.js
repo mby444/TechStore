@@ -19,8 +19,9 @@ export const createProductCardHTML = (product) => {
       data-slot="card"
       class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border group cursor-pointer hover:shadow-lg transition-shadow">
       <div data-slot="card-content" class="[&:last-child]:pb-6 p-0">
-        <div
-          class="relative overflow-hidden aspect-square rounded-t-xl">
+        <a
+          href="/produk/detail/?id=${product.id}"
+          class="relative block overflow-hidden aspect-square rounded-t-xl">
           <img
             src="${product.image}"
             alt="${product.name}"
@@ -31,12 +32,14 @@ export const createProductCardHTML = (product) => {
             } absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">
             -${Math.round(product.discount * 100)}%
           </div>
-        </div>
+        </a>
         <div class="p-4">
           <p class="text-sm text-gray-500 mb-1">${product.category}</p>
-          <h3 class="mb-2 line-clamp-2 hover:text-blue-600">
+          <a href="/produk/detail/?id=${
+            product.id
+          }" class="mb-2 line-clamp-2 hover:text-blue-600">
             ${product.name}
-          </h3>
+          </a>
           <div class="flex items-center gap-1 mb-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +69,8 @@ export const createProductCardHTML = (product) => {
               >${formatRupiah(product.price)}</span
             >
           </div>
-          <button
+          <a
+            href="/produk/detail/?id=${product.id}"
             data-slot="button"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3 w-full">
             <svg
@@ -85,7 +89,7 @@ export const createProductCardHTML = (product) => {
               <path
                 d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg
             >Beli Sekarang
-          </button>
+          </a>
         </div>
       </div>
     </div>`;
