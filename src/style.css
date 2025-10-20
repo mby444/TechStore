@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* @import "/src/css/popup.css"; */
 
 :root {
   --font-size: 16px;
@@ -146,4 +147,72 @@
 
 html {
   font-size: var(--font-size);
+}
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Kotak popup */
+.popup {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.25s ease;
+}
+
+/* Animasi muncul */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ikon */
+.popup-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.success {
+  color: #16a34a;
+} /* hijau */
+.error {
+  color: #dc2626;
+} /* merah */
+.info {
+  color: #2563eb;
+} /* biru */
+.warning {
+  color: #f59e0b;
+} /* kuning */
+
+/* Tombol */
+.popup button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.popup button:hover {
+  background: #1e40af;
 }
