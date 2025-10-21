@@ -1,4 +1,47 @@
-// Data produk
+/**
+ * ============================================
+ *  Data Produk TechStore
+ *  --------------------------------------------
+ *  Berisi daftar produk lengkap dengan informasi
+ *  seperti harga, rating, deskripsi, dan spesifikasi.
+ *  Data ini diekspor dan digunakan oleh berbagai
+ *  komponen seperti halaman produk dan katalog.
+ * ============================================
+ */
+
+/**
+ * @typedef {Object} ProductRatingDetail
+ * @property {string} username - Nama pengguna yang memberikan ulasan.
+ * @property {number} starCount - Jumlah bintang yang diberikan (1–5).
+ * @property {string} message - Isi ulasan pengguna.
+ * @property {string} date - Tanggal ulasan dalam format ISO (YYYY-MM-DD).
+ */
+
+/**
+ * @typedef {Object} ProductRating
+ * @property {number} average - Rata-rata rating produk.
+ * @property {number} count - Jumlah total ulasan.
+ * @property {ProductRatingDetail[]} details - Daftar detail ulasan pengguna.
+ */
+
+/**
+ * @typedef {Object} Product
+ * @property {number} id - ID unik produk.
+ * @property {string} image - URL gambar produk.
+ * @property {string} name - Nama produk.
+ * @property {string} category - Kategori produk (misalnya: "Laptop", "Smartphone").
+ * @property {ProductRating} rating - Informasi rating produk.
+ * @property {number} discount - Persentase diskon (0–1).
+ * @property {number} price - Harga produk dalam Rupiah.
+ * @property {number} stock - Jumlah stok tersedia.
+ * @property {string} description - Deskripsi singkat produk.
+ * @property {string[]} specifications - Daftar spesifikasi produk.
+ */
+
+/**
+ * Daftar lengkap produk yang tersedia di toko.
+ * @type {Product[]}
+ */
 export const products = [
   {
     id: 1,

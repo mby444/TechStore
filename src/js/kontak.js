@@ -1,17 +1,24 @@
 import { showPopup } from "../lib/popup.js";
 import "./components/navbar.js";
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+/**
+ * Menangani pengiriman formulir kontak, memvalidasi input pengguna,
+ * menampilkan pesan error jika tidak valid, dan popup konfirmasi jika sukses.
+ *
+ * @param {Event} e - Event submit dari elemen form.
+ * @returns {void}
+ */
+document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Ambil semua input
+  // --- Ambil semua input form ---
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
   const subject = document.getElementById("subject");
   const message = document.getElementById("message");
 
-  // Ambil elemen pesan error
+  // --- Ambil elemen pesan error ---
   const errors = {
     name: document.getElementById("error-name"),
     email: document.getElementById("error-email"),
@@ -22,20 +29,20 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   let valid = true;
 
-  // Reset pesan error
+  // --- Reset semua pesan error sebelum validasi ---
   Object.values(errors).forEach((el) => {
     el.textContent = "";
     el.classList.add("hidden");
   });
 
-  // Validasi Nama
+  // --- Validasi Nama ---
   if (name.value.trim() === "") {
     errors.name.textContent = "Nama tidak boleh kosong.";
     errors.name.classList.remove("hidden");
     valid = false;
   }
 
-  // Validasi Email
+  // --- Validasi Email ---
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (email.value.trim() === "") {
     errors.email.textContent = "Email tidak boleh kosong.";
@@ -47,7 +54,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     valid = false;
   }
 
-  // Validasi Nomor Telepon
+  // --- Validasi Nomor Telepon ---
   const phoneRegex = /^\+?\d{8,15}$/;
   if (phone.value.trim() === "") {
     errors.phone.textContent = "Nomor telepon wajib diisi.";
@@ -59,20 +66,21 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     valid = false;
   }
 
-  // Validasi Subjek
+  // --- Validasi Subjek ---
   if (subject.value.trim() === "") {
     errors.subject.textContent = "Subjek tidak boleh kosong.";
     errors.subject.classList.remove("hidden");
     valid = false;
   }
 
-  // Validasi Pesan
+  // --- Validasi Pesan ---
   if (message.value.trim() === "") {
     errors.message.textContent = "Pesan tidak boleh kosong.";
     errors.message.classList.remove("hidden");
     valid = false;
   }
 
+  // --- Jika semua input valid ---
   if (valid) {
     showPopup("Sukses!", "Pesan berhasil dikirim!", "info");
     e.target.reset();

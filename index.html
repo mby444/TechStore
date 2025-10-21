@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechStore</title>
+
+    <!-- File CSS utama -->
     <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- Script utama (modular) -->
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
@@ -135,24 +139,29 @@
     </header>
     <main class="flex-1">
       <div>
+        <!-- ================= HERO SECTION ================= -->
         <section
-          class="bg-[url(https://plus.unsplash.com/premium_photo-1664303773101-6376f5732b41?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=887)] bg-no-repeat bg-cover bg-center text-white">
+          class="bg-[url(https://plus.unsplash.com/premium_photo-1664303773101-6376f5732b41?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=887)] bg-no-repeat bg-cover bg-center text-white">
           <div class="container mx-auto px-4 py-20">
             <div class="grid md:grid-cols-2 gap-8 items-center">
+              <!-- Teks Utama -->
               <div>
-                <h1 class="mb-4">
+                <h1 class="mb-4 text-3xl font-bold">
                   Teknologi Terbaru untuk Kehidupan Modern Anda
                 </h1>
                 <p class="mb-8 text-blue-100">
                   Temukan berbagai produk elektronik berkualitas dengan harga
                   terbaik. Gratis ongkir untuk pembelian pertama!
                 </p>
+
+                <!-- Tombol Aksi -->
                 <div class="flex gap-4">
+                  <!-- Tombol Belanja Sekarang -->
                   <a
                     href="/produk/"
-                    data-slot="button"
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
-                    Belanja Sekarang<svg
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
+                    Belanja Sekarang
+                    <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -167,26 +176,32 @@
                       <path d="m12 5 7 7-7 7"></path>
                     </svg>
                   </a>
+
+                  <!-- Tombol Kontak -->
                   <a
                     href="/kontak/"
-                    data-slot="button"
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive border h-10 rounded-md px-6 has-[>svg]:px-4 bg-transparent text-white border-white hover:bg-white hover:text-blue-600">
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 border h-10 rounded-md px-6 has-[>svg]:px-4 bg-transparent text-white border-white hover:bg-white hover:text-blue-600">
                     Kontak
                   </a>
                 </div>
               </div>
+
+              <!-- Gambar Samping -->
               <div class="hidden md:block">
                 <img
-                  src="https://images.unsplash.com/photo-1758876019070-2e4fd5f505cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1032"
+                  src="https://images.unsplash.com/photo-1758876019070-2e4fd5f505cb?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1032"
                   alt="Electronics Store"
                   class="rounded-lg shadow-2xl w-full" />
               </div>
             </div>
           </div>
         </section>
+
+        <!-- ================= FITUR KEUNGGULAN ================= -->
         <section class="py-12 bg-gray-50">
           <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <!-- Item 1 -->
               <div class="text-center group">
                 <div
                   class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -210,9 +225,11 @@
                     <circle cx="7" cy="18" r="2"></circle>
                   </svg>
                 </div>
-                <h3 class="mb-1">Gratis Ongkir</h3>
+                <h3 class="mb-1 font-semibold">Gratis Ongkir</h3>
                 <p class="text-sm text-gray-600">Untuk pembelian pertama</p>
               </div>
+
+              <!-- Item 2 -->
               <div class="text-center group">
                 <div
                   class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -231,9 +248,11 @@
                       d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                   </svg>
                 </div>
-                <h3 class="mb-1">Garansi Resmi</h3>
+                <h3 class="mb-1 font-semibold">Garansi Resmi</h3>
                 <p class="text-sm text-gray-600">100% produk original</p>
               </div>
+
+              <!-- Item 3 -->
               <div class="text-center group">
                 <div
                   class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -252,9 +271,11 @@
                       d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
                   </svg>
                 </div>
-                <h3 class="mb-1">24/7 Support</h3>
+                <h3 class="mb-1 font-semibold">24/7 Support</h3>
                 <p class="text-sm text-gray-600">Siap membantu Anda</p>
               </div>
+
+              <!-- Item 4 -->
               <div class="text-center group">
                 <div
                   class="bg-blue-100 group-hover:bg-blue-600 transition-colors w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -273,24 +294,26 @@
                     <line x1="2" x2="22" y1="10" y2="10"></line>
                   </svg>
                 </div>
-                <h3 class="mb-1">Pembayaran Aman</h3>
+                <h3 class="mb-1 font-semibold">Pembayaran Aman</h3>
                 <p class="text-sm text-gray-600">Berbagai metode pembayaran</p>
               </div>
             </div>
           </div>
         </section>
+
+        <!-- ================= PRODUK UNGGULAN ================= -->
         <section class="py-16">
           <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-8">
               <div>
-                <h2 class="mb-2">Produk Unggulan</h2>
+                <h2 class="mb-2 text-2xl font-semibold">Produk Unggulan</h2>
                 <p class="text-gray-600">Pilihan terbaik untuk Anda</p>
               </div>
               <a
                 href="/produk/"
-                data-slot="button"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3">
-                Lihat Semua<svg
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 border bg-background text-foreground hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 has-[>svg]:px-3">
+                Lihat Semua
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -306,85 +329,100 @@
                 </svg>
               </a>
             </div>
+            <!-- Kontainer produk dinamis -->
             <div
               class="top-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
           </div>
         </section>
+
+        <!-- ================= KATEGORI POPULER ================= -->
         <section class="py-16 bg-gray-50">
           <div class="container mx-auto px-4">
-            <h2 class="text-center mb-8">Kategori Populer</h2>
+            <h2 class="text-center mb-8 text-2xl font-semibold">
+              Kategori Populer
+            </h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <!-- Item Kategori -->
               <a
                 href="/produk/?default_category=smartphone"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1706300896423-7d08346e8dbb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=435"
+                  src="https://images.unsplash.com/photo-1706300896423-7d08346e8dbb?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=435"
                   alt="Smartphone"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 class="text-white">Smartphone</h3>
+                  <h3 class="text-white text-lg font-semibold">Smartphone</h3>
                 </div>
               </a>
+
               <a
                 href="/produk/?default_category=laptop"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXB0b3AlMjBjb21wdXRlcnxlbnwxfHx8fDE3NjA0OTI2Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?auto=format&fit=crop&q=80&w=1080"
                   alt="Laptop"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 class="text-white">Laptop</h3>
+                  <h3 class="text-white text-lg font-semibold">Laptop</h3>
                 </div>
               </a>
+
               <a
                 href="/produk/?default_category=audio"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlbGVzcyUyMGhlYWRwaG9uZXN8ZW58MXx8fHwxNzYwNDQ2MDI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=1080"
                   alt="Audio"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 class="text-white">Audio</h3>
+                  <h3 class="text-white text-lg font-semibold">Audio</h3>
                 </div>
               </a>
+
               <a
                 href="/produk/?default_category=wearable"
                 class="relative overflow-hidden rounded-lg cursor-pointer group aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMHdhdGNofGVufDF8fHx8MTc2MDUwNjg0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=1080"
                   alt="Wearable"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 class="text-white">Wearable</h3>
+                  <h3 class="text-white text-lg font-semibold">Wearable</h3>
                 </div>
               </a>
             </div>
           </div>
         </section>
+
+        <!-- ================= SUBSCRIBE SECTION ================= -->
         <section
-          class="bg-[url(https://plus.unsplash.com/premium_photo-1661371394983-42485fed3a58?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=869)] bg-no-repeat bg-cover bg-center text-white">
+          class="bg-[url(https://plus.unsplash.com/premium_photo-1661371394983-42485fed3a58?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=869)] bg-no-repeat bg-cover bg-center text-white">
           <div class="bg-blue-600/75 py-16">
             <div class="container mx-auto px-4 text-center">
-              <h2 class="mb-4">Dapatkan Penawaran Terbaik</h2>
+              <h2 class="mb-4 text-2xl font-semibold">
+                Dapatkan Penawaran Terbaik
+              </h2>
               <p class="mb-8 text-blue-100 max-w-2xl mx-auto">
                 Daftarkan email Anda untuk mendapatkan update produk terbaru dan
                 penawaran eksklusif
               </p>
+
+              <!-- Form Subscribe -->
               <div class="flex gap-4 max-w-md mx-auto justify-center">
                 <form
                   action=""
-                  class="flex gap-4 flex-col md:flex-row items-center">
+                  class="flex gap-4 flex-col md:flex-row items-center w-full">
                   <input
                     type="email"
                     placeholder="Email Anda"
                     required
-                    class="flex-1 px-4 py-3 rounded-md text-white bg-secondary/10" /><button
-                    data-slot="button"
-                    class="w-full md:w-30 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
+                    class="flex-1 px-4 py-3 rounded-md text-white bg-secondary/10 placeholder:text-blue-100" />
+                  <button
+                    class="w-full md:w-30 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 rounded-md px-6 has-[>svg]:px-4">
                     Subscribe
                   </button>
                 </form>
@@ -394,9 +432,12 @@
         </section>
       </div>
     </main>
+
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
+          <!-- Kolom 1: Logo dan Deskripsi -->
           <div>
             <div class="footer-logo">
               <a href="/">
@@ -411,6 +452,8 @@
               terbaik.
             </p>
           </div>
+
+          <!-- Kolom 2: Link Cepat -->
           <div>
             <h3 class="footer-title">Link Cepat</h3>
             <ul class="footer-list">
@@ -420,6 +463,8 @@
               <li><a href="#" class="footer-link">Blog</a></li>
             </ul>
           </div>
+
+          <!-- Kolom 3: Layanan -->
           <div>
             <h3 class="footer-title">Layanan</h3>
             <ul class="footer-list">
@@ -429,6 +474,8 @@
               <li><a href="#" class="footer-link">Pengembalian</a></li>
             </ul>
           </div>
+
+          <!-- Kolom 4: Kontak -->
           <div>
             <h3 class="footer-title">Kontak Kami</h3>
             <ul class="footer-contact">

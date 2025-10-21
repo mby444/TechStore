@@ -91,6 +91,10 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    font-size: var(--font-size);
+  }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -146,8 +150,4 @@
       line-height: 1.5;
     }
   }
-}
-
-html {
-  font-size: var(--font-size);
 }
