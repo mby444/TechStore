@@ -1,4 +1,5 @@
 import { showPopup } from "../lib/popup.js";
+import "./components/navbar.js";
 
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();

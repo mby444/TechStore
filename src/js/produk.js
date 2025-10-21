@@ -1,5 +1,6 @@
 import { products } from "../data.js";
 import { createProductCardHTML } from "../utils.js";
+import "./components/navbar.js";
 
 // Selector kategori
 const categoryCheckboxes = document.querySelectorAll(".category-checkbox");

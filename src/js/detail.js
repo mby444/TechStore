@@ -5,6 +5,7 @@ import {
   createProductContentHTML,
   createDetailTabsHTML,
 } from "../utils.js";
+import "./components/navbar.js";
 
 // Konstanta global
 const searchParams = new URLSearchParams(window.location.search);

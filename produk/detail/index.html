@@ -19,23 +19,34 @@
     <header class="sticky top-0 z-50 bg-white border-b">
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
+          <!-- Logo dan Nav -->
           <div class="flex items-center gap-8">
             <div class="cursor-pointer flex items-center gap-2">
               <a href="/" class="text-white rounded-md">
-                <img src="/images/logo.png" alt="" class="h-10 w-auto" />
+                <img
+                  src="/images/logo.png"
+                  alt="TechStore"
+                  class="h-10 w-auto" />
               </a>
             </div>
+
+            <!-- Menu Desktop -->
             <nav class="hidden md:flex items-center gap-8">
-              <a href="/" class="hover:text-blue-600 transition-colors">Home</a
-              ><a
-                href="/produk/"
-                class="hover:text-blue-600 transition-colors text-blue-600">
-                Produk</a
-              ><a href="/kontak/" class="hover:text-blue-600 transition-colors">
-                Kontak
-              </a>
+              <a
+                href="/"
+                class="hover:text-blue-600 transition-colors text-blue-600"
+                >Home</a
+              >
+              <a href="/produk/" class="hover:text-blue-600 transition-colors"
+                >Produk</a
+              >
+              <a href="/kontak/" class="hover:text-blue-600 transition-colors"
+                >Kontak</a
+              >
             </nav>
           </div>
+
+          <!-- Ikon Aksi Desktop -->
           <div class="hidden md:flex items-center gap-4">
             <button
               class="p-2 hover:bg-gray-100 rounded-full transition-colors">
@@ -52,8 +63,9 @@
                 class="lucide lucide-search w-5 h-5">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
-              </svg></button
-            ><button
+              </svg>
+            </button>
+            <button
               class="p-2 hover:bg-gray-100 rounded-full transition-colors relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +85,11 @@
               </svg>
             </button>
           </div>
-          <button class="md:hidden p-2">
+
+          <!-- Tombol Menu Mobile -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-md hover:bg-gray-100 transition">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -92,6 +108,62 @@
           </button>
         </div>
       </div>
+
+      <!-- Dropdown Mobile Menu -->
+      <nav
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-white border-t border-gray-100 shadow-lg px-4 py-4 space-y-3 animate-fadeIn">
+        <a href="/" class="block text-gray-700 hover:text-blue-600 transition"
+          >Home</a
+        >
+        <a
+          href="/produk/"
+          class="block text-gray-700 hover:text-blue-600 transition"
+          >Produk</a
+        >
+        <a
+          href="/kontak/"
+          class="block text-gray-700 hover:text-blue-600 transition"
+          >Kontak</a
+        >
+
+        <div class="flex gap-4 pt-3 border-t border-gray-100">
+          <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-search w-5 h-5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </button>
+          <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-shopping-cart w-5 h-5">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path
+                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
     </header>
     <main class="flex-1">
       <div class="container mx-auto px-4 py-8">
