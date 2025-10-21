@@ -95,7 +95,6 @@ export const createProductCardHTML = (product) => {
     </div>`;
 };
 
-// TODO: Jika sempat, otomatisasi tampilan ikon bintang
 export const createProductContentHTML = (product) => {
   return `<div
       class="grid lg:grid-cols-2 gap-8">
