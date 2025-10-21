@@ -160,15 +160,14 @@
       <div class="container mx-auto px-4 py-8">
         <div class="mb-8">
           <h1 class="mb-2">Semua Produk</h1>
-          <!-- TODO: Ubah x menjadi angka dinamis -->
           <p class="text-gray-600">
             Menampilkan <span class="products-count">0</span> dari
             <span class="available-products-count">0</span> produk
           </p>
         </div>
-        <div class="flex gap-8">
-          <aside class="hidden lg:block w-64 flex-shrink-0">
-            <div class="sticky top-24">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <aside class="lg:w-64 flex-shrink-0">
+            <div class="lg:sticky lg:top-24">
               <div class="bg-white border rounded-lg p-6">
                 <h3 class="mb-4 flex items-center gap-2">
                   <svg
@@ -188,7 +187,8 @@
                 </h3>
                 <div class="mb-6">
                   <h4 class="mb-3">Kategori</h4>
-                  <div class="space-y-2">
+                  <div
+                    class="flex flex-col md:flex-row lg:flex-col gap-0 md:gap-5 lg:gap-0 space-y-2">
                     <div class="flex items-center gap-2">
                       <input
                         type="checkbox"
@@ -387,43 +387,17 @@
             </div>
           </aside>
           <div class="flex-1">
-            <div class="flex items-end lg:items-start gap-4 mb-6">
-              <button
-                data-slot="button"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 has-[&gt;svg]:px-3 lg:hidden flex-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-sliders-horizontal w-4 h-4 mr-2">
-                  <line x1="21" x2="14" y1="4" y2="4"></line>
-                  <line x1="10" x2="3" y1="4" y2="4"></line>
-                  <line x1="21" x2="12" y1="12" y2="12"></line>
-                  <line x1="8" x2="3" y1="12" y2="12"></line>
-                  <line x1="21" x2="16" y1="20" y2="20"></line>
-                  <line x1="12" x2="3" y1="20" y2="20"></line>
-                  <line x1="14" x2="14" y1="2" y2="6"></line>
-                  <line x1="8" x2="8" y1="10" y2="14"></line>
-                  <line x1="16" x2="16" y1="18" y2="22"></line></svg
-                >Filter
-              </button>
-              <div class="flex items-center gap-4">
-                <div class="w-30 md:w-56">
+            <div class="flex lg:items-start gap-4 mb-6">
+              <div class="flex w-full items-center gap-4">
+                <div class="w-full md:w-56">
                   <label class="block text-sm font-medium text-gray-700 mb-1"
                     >Urutkan Berdasarkan</label
                   >
-
                   <div id="dropdown-container" class="relative">
                     <!-- Tombol utama -->
                     <button
                       id="sort-dropdown-button"
-                      class="flex w-full items-center justify-between rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800 shadow-sm transition-all hover:border-gray-400 focus:ring-2 focus:ring-blue-300 focus:outline-none">
+                      class="flex w-50 items-center justify-between rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800 shadow-sm transition-all hover:border-gray-400 focus:ring-2 focus:ring-blue-300 focus:outline-none">
                       <span id="sort-dropdown-value">Default</span>
                       <svg
                         class="w-4 h-4 text-gray-500 transition-transform duration-200"
@@ -469,6 +443,97 @@
                 </div>
               </div>
             </div>
+
+            <!-- Filter Overlay (Mobile) -->
+            <!-- <div
+              id="mobile-filter"
+              class="fixed inset-0 bg-black/40 z-50 hidden justify-center items-center lg:hidden">
+              <div
+                class="bg-white w-11/12 max-w-sm rounded-lg shadow-lg p-6 overflow-y-auto max-h-[90vh] relative">
+                <button
+                  id="close-filter"
+                  class="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100">
+                  ✕
+                </button>
+
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-funnel w-5 h-5">
+                    <path
+                      d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"></path>
+                  </svg>
+                  Filter
+                </h3>
+                <div id="filter-content-mobile" class="space-y-3 text-sm">
+                  <div class="space-y-2">
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="smartphone"
+                        class="category-checkbox" />
+                      Smartphone
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="laptop"
+                        class="category-checkbox" />
+                      Laptop
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="audio"
+                        class="category-checkbox" />
+                      Audio
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="wearable"
+                        class="category-checkbox" />
+                      Wearable
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="tablet"
+                        class="category-checkbox" />
+                      Tablet
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="kamera"
+                        class="category-checkbox" />
+                      Kamera
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value="gaming"
+                        class="category-checkbox" />
+                      Gaming
+                    </label>
+                  </div>
+
+                  <button
+                    class="reset-filter-button mt-4 w-full border rounded-md py-2 hover:bg-gray-100 transition">
+                    Reset Filter
+                  </button>
+                </div>
+              </div>
+            </div> -->
+
             <!-- Kontainer listing produk -->
             <div
               class="products-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>

@@ -85,6 +85,32 @@ resetFilterBtn.addEventListener("click", () => {
   console.log("selectedCategories", selectedCategories);
 });
 
+// === Toggle Menu Filter ===
+const filterToggleBtn = document.querySelector(
+  "button:has(svg.lucide-sliders-horizontal)"
+);
+const mobileFilter = document.getElementById("mobile-filter");
+const closeFilterBtn = document.getElementById("close-filter");
+
+// Toggle buka/tutup filter
+filterToggleBtn?.addEventListener("click", () => {
+  mobileFilter.classList.toggle("hidden");
+  mobileFilter.classList.toggle("flex"); // untuk flex centering
+});
+
+closeFilterBtn?.addEventListener("click", () => {
+  mobileFilter.classList.add("hidden");
+  mobileFilter.classList.remove("flex");
+});
+
+// Tutup jika klik di luar kotak filter
+mobileFilter?.addEventListener("click", (e) => {
+  if (e.target === mobileFilter) {
+    mobileFilter.classList.add("hidden");
+    mobileFilter.classList.remove("flex");
+  }
+});
+
 // === Dropdown Sortir ===
 // Toggle buka/tutup menu
 dropdownButton.addEventListener("click", (e) => {
