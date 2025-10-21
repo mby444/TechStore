@@ -3,7 +3,7 @@ export const products = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1592375601764-5dd6be536f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwZWxlY3Ryb25pY3N8ZW58MXx8fHwxNzYwNDgxMTc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1706300896423-7d08346e8dbb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=435",
     name: "Samsung Galaxy S24 Ultra",
     category: "Smartphone",
     rating: {
