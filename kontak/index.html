@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
+    <!-- Elemen popup -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup" id="popupBox">
+        <div class="popup-icon" id="popupIcon"></div>
+        <h3 id="popupTitle"></h3>
+        <p id="popupMessage"></p>
+        <button id="popupCloseButton">OK</button>
+      </div>
+    </div>
     <header class="sticky top-0 z-50 bg-white border-b">
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
@@ -101,97 +110,124 @@
             <div class="grid lg:grid-cols-3 gap-8">
               <div class="lg:col-span-2">
                 <div
-                  data-slot="card"
-                  class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border">
+                  class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm">
+                  <!-- Header -->
                   <div
-                    data-slot="card-header"
-                    class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
-                    <h4 data-slot="card-title" class="leading-none">
+                    class="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 pb-2 border-b">
+                    <h4 class="text-lg font-semibold leading-none">
                       Kirim Pesan
                     </h4>
+                    <p class="text-sm text-muted-foreground">
+                      Isi formulir di bawah untuk menghubungi kami
+                    </p>
                   </div>
-                  <div
-                    data-slot="card-content"
-                    class="px-6 [&amp;:last-child]:pb-6">
-                    <form class="space-y-6">
+
+                  <!-- Content -->
+                  <div class="px-6 pb-6">
+                    <form id="contactForm" class="space-y-6" novalidate>
+                      <!-- Baris 1 -->
                       <div class="grid md:grid-cols-2 gap-4">
                         <div>
-                          <label for="name" class="block mb-2 text-sm"
+                          <label
+                            for="name"
+                            class="block mb-2 text-sm font-medium"
                             >Nama Lengkap</label
-                          ><input
+                          >
+                          <input
                             type="text"
-                            data-slot="input"
-                            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                             id="name"
                             placeholder="Masukkan nama Anda"
-                            required="" />
+                            class="w-full h-10 rounded-md border border-input bg-input-background px-3 py-2 text-sm outline-none transition focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring placeholder:text-muted-foreground" />
+                          <p
+                            class="text-sm text-red-500 mt-1 hidden"
+                            id="error-name"></p>
                         </div>
+
                         <div>
-                          <label for="email" class="block mb-2 text-sm"
+                          <label
+                            for="email"
+                            class="block mb-2 text-sm font-medium"
                             >Email</label
-                          ><input
+                          >
+                          <input
                             type="email"
-                            data-slot="input"
-                            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                             id="email"
                             placeholder="email@example.com"
-                            required="" />
+                            class="w-full h-10 rounded-md border border-input bg-input-background px-3 py-2 text-sm outline-none transition focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring placeholder:text-muted-foreground" />
+                          <p
+                            class="text-sm text-red-500 mt-1 hidden"
+                            id="error-email"></p>
                         </div>
                       </div>
+
+                      <!-- Baris 2 -->
                       <div class="grid md:grid-cols-2 gap-4">
                         <div>
-                          <label for="phone" class="block mb-2 text-sm"
+                          <label
+                            for="phone"
+                            class="block mb-2 text-sm font-medium"
                             >Nomor Telepon</label
-                          ><input
+                          >
+                          <input
                             type="tel"
-                            data-slot="input"
-                            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                             id="phone"
                             placeholder="+62 812 3456 7890"
-                            required="" />
+                            class="w-full h-10 rounded-md border border-input bg-input-background px-3 py-2 text-sm outline-none transition focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring placeholder:text-muted-foreground" />
+                          <p
+                            class="text-sm text-red-500 mt-1 hidden"
+                            id="error-phone"></p>
                         </div>
+
                         <div>
-                          <label for="subject" class="block mb-2 text-sm"
+                          <label
+                            for="subject"
+                            class="block mb-2 text-sm font-medium"
                             >Subjek</label
-                          ><input
+                          >
+                          <input
                             type="text"
-                            data-slot="input"
-                            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                             id="subject"
                             placeholder="Topik pesan"
-                            required="" />
+                            class="w-full h-10 rounded-md border border-input bg-input-background px-3 py-2 text-sm outline-none transition focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring placeholder:text-muted-foreground" />
+                          <p
+                            class="text-sm text-red-500 mt-1 hidden"
+                            id="error-subject"></p>
                         </div>
                       </div>
+
+                      <!-- Pesan -->
                       <div>
-                        <label for="message" class="block mb-2 text-sm"
+                        <label
+                          for="message"
+                          class="block mb-2 text-sm font-medium"
                           >Pesan</label
-                        ><textarea
-                          data-slot="textarea"
-                          class="resize-none border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-input-background px-3 py-2 text-base transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                        >
+                        <textarea
                           id="message"
-                          placeholder="Tulis pesan Anda di sini..."
                           rows="6"
-                          required=""></textarea>
+                          placeholder="Tulis pesan Anda di sini..."
+                          class="w-full min-h-24 rounded-md border border-input bg-input-background px-3 py-2 text-sm outline-none resize-none transition focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring placeholder:text-muted-foreground"></textarea>
+                        <p
+                          class="text-sm text-red-500 mt-1 hidden"
+                          id="error-message"></p>
                       </div>
+
+                      <!-- Tombol -->
                       <button
-                        data-slot="button"
-                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[&gt;svg]:px-4 w-full md:w-auto"
-                        type="submit">
+                        type="submit"
+                        class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 text-sm font-medium transition-all shadow-sm hover:shadow disabled:pointer-events-none disabled:opacity-50 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
+                          class="w-4 h-4"
                           fill="none"
+                          viewBox="0 0 24 24"
                           stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-send w-4 h-4 mr-2">
+                          stroke-width="2">
                           <path
-                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
-                          <path d="m21.854 2.147-10.94 10.939"></path></svg
-                        >Kirim Pesan
+                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+                          <path d="m21.854 2.147-10.94 10.939" />
+                        </svg>
+                        Kirim Pesan
                       </button>
                     </form>
                   </div>
@@ -571,6 +607,6 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/kontak.js"></script>
   </body>
 </html>
