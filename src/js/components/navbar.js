@@ -1,9 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById("mobile-menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
+const navbarMobileBtn = document.getElementById("mobile-menu-btn");
+const navbarMobileMenu = document.getElementById("mobile-menu");
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("flex");
-  });
+navbarMobileBtn.addEventListener("click", () => {
+  navbarMobileMenu.style.display =
+    navbarMobileMenu.style.display === "flex" ? "none" : "flex";
 });
